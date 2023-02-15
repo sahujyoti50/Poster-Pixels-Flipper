@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 900px;
+  margin: 10px auto;
+  height: 800px;
+  background-color: #fcfbfb;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.App .two-sided-effect {
+  padding: 20px 20px;
+  border: 0.5vw solid var(--backgroundColor);
+}
+
+.two-sided-effect,
+.front,
+.back,
+img {
+  width: 200px;
+  height: 230px;
+  margin-right: 10px;
+  
+}
+
+
+.two-sided-effect:hover .flipper {
+  transform: rotateY(180deg);
+  /* CSS Flip Toggle on hover  */
+}
+
+.flipper {
+  transition: 1.2s;
+  transform-style: preserve-3d;
+  position: relative;
+  /* flip speed goes here */
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+
+/* .two-sided-effect,
+.front,
+.back{
+  box-shadow: 1px 2px 3px #999999;
+} */
+/* ****************** */
+/* entire container, keeps perspective */
+/* .two-sided-effect {
+  perspective: 200px;
+} */
+
+/*  rotateY horizontal flip*/
+/* .two-sided-effect:hover.flipper {
+  transform: rotateY(180deg);
+} */
+
+
+/* rotateX for verticle flip container*/
+/* .vertical.two-sided-effect {
+  position: relative;
+}
+
+.vertical .back {
+  transform: rotateX(180deg);
+}
+
+.vertical.two-sided-effect .flipper {
+  transform-origin: 100% 150px;
+}
+
+.vertical.two-sided-effect:focus .flipper {
+  transform: rotateX(-180deg);
+} */
+
+/* front pane, placed above back */
+/* .front {
+  z-index: 2; */
+/* for firefox 31 */
+/* transform: rotateY(0deg);
+} */
